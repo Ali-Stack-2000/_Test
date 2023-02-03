@@ -30,6 +30,5 @@ jobs:
         - run: |
             echo "Event that triggered: $GITHUB_EVENT_NAME"
             echo "Branch : $GITHUB_REF"
-            ls
         
         
