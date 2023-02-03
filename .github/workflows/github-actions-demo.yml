@@ -1,0 +1,35 @@
+name: GitHub Actions Demo
+
+on: 
+
+  push:
+    branches: ["main"]
+    paths-ignore: 
+      - .github/**
+    
+  pull_request:
+    branches: ["main"]
+    
+  schedule:
+    - cron: "15 6 * * sun"
+    
+  workflow_dispatch:
+    
+    
+    
+jobs:
+
+    build: 
+      runs-on: ubuntu-latest
+      
+      
+      steps:
+        - uses: actions/checkout@v3
+        
+        - name: Run a multiline script
+        - run: |
+            echo "Event that triggered: $GITHUB_EVENT_NAME"
+            echo "Branch : $GITHUB_REF"
+            ls
+        
+        
